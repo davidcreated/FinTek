@@ -1,0 +1,89 @@
+name: fintek
+description: "A smart fintech application for seamless financial transactions"
+publish_to: "none" # Prevent accidental publishing to pub.dev
+version: 1.0.0+1
+
+# Flutter SDK version constraint
+environment:
+  sdk: ^3.9.2
+
+# ==================== DEPENDENCIES ====================
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ===== State Management =====
+  get: ^4.7.2 # GetX for state management, routing, and DI
+
+  # ===== Backend & Database =====
+  supabase_flutter: ^2.10.3 # Supabase backend (Auth, DB, Storage, Realtime)
+
+  # ===== Storage & Security =====
+  flutter_secure_storage: ^9.2.4 # Secure storage for tokens & sensitive data
+  shared_preferences: ^2.5.3 # Local storage for user preferences
+  local_auth: ^3.0.0 # Biometric authentication (Fingerprint, Face ID)
+
+  # ===== UI & Media =====
+  flutter_svg: ^2.2.2 # SVG image support
+  cached_network_image: ^3.4.1 # Network image loading with caching
+  image_picker: ^1.2.1 # Pick images from gallery/camera
+  pinput: ^5.0.2 # Beautiful PIN/OTP input fields
+
+  # ===== Utilities =====
+  intl: ^0.20.2 # Internationalization & date/currency formatting
+  uuid: ^4.5.2 # Generate unique IDs for transactions
+
+# ===== Development Dependencies =====
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0 # Linting rules for code quality
+
+# ==================== FLUTTER CONFIGURATION ====================
+flutter:
+  uses-material-design: true
+
+  # ===== Assets =====
+  assets:
+    # Images
+    - assets/images/
+
+    # SVG Icons & Vectors
+    - assets/vectors/
+    - assets/vectors/fintekLogo.svg
+    - assets/icons/
+    - assets/svgs/
+
+    # Animations
+    - assets/animations/
+    - assets/lottie/
+
+    # Data Files
+    - assets/json/
+
+    # Media
+    - assets/videos/
+    - assets/audio/
+
+  # ===== Fonts =====
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Poppins-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins-Black.ttf
+          weight: 900
