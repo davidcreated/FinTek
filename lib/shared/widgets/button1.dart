@@ -1,3 +1,4 @@
+import 'package:fintek/shared/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton1 extends StatelessWidget {
@@ -13,8 +14,8 @@ class CustomButton1 extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.backgroundColor = Colors.transparent,
-    this.textColor = Colors.black,
+    this.backgroundColor = AppColors.primaryLight,
+    this.textColor = AppColors.textPrimary,
     this.borderRadius = 30,
     this.width = 207,
     this.height = 50.0,
@@ -29,17 +30,21 @@ class CustomButton1 extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
+          foregroundColor: textColor,
+          elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
           ),
+          padding: EdgeInsets.zero,
         ),
         child: Text(
           text,
           style: TextStyle(
             color: textColor,
-            fontSize: 18,
+            fontSize: 16,
             fontFamily: "Poppins",
             fontWeight: FontWeight.w600,
+            letterSpacing: 0.5,
           ),
         ),
       ),

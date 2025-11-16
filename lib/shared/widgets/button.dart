@@ -14,8 +14,8 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.backgroundColor = AppColors.success,
-    this.textColor = Colors.black,
+    this.backgroundColor = AppColors.primary,
+    this.textColor = AppColors.white,
     this.borderRadius = 30,
     this.width = 207,
     this.height = 50.0,
@@ -30,18 +30,21 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
+          foregroundColor: textColor,
+          elevation: 0,
           shape: RoundedRectangleBorder(
-            // <-- fix here
             borderRadius: BorderRadius.circular(borderRadius),
           ),
+          padding: EdgeInsets.zero,
         ),
         child: Text(
           text,
           style: TextStyle(
             color: textColor,
-            fontSize: 18,
+            fontSize: 16,
             fontFamily: "Poppins",
             fontWeight: FontWeight.w600,
+            letterSpacing: 0.5,
           ),
         ),
       ),

@@ -2,7 +2,9 @@ import 'package:fintek/shared/constants/app_colors.dart';
 import 'package:fintek/shared/widgets/button.dart';
 import 'package:fintek/shared/widgets/button1.dart';
 import 'package:fintek/shared/widgets/textbutton.dart';
+import 'package:fintek/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Onboarding2 extends StatefulWidget {
   const Onboarding2({super.key});
@@ -131,7 +133,7 @@ class _Onboarding2State extends State<Onboarding2>
                         child: FadeTransition(
                           opacity: _logoOpacity,
                           child: Image.asset(
-                            "assets/vectors/finTekLogo2.png",
+                            "assets/vectors/finTekLogoGreen.svg",
                             width: 160,
                             height: 160,
                             fit: BoxFit.contain,
@@ -147,11 +149,11 @@ class _Onboarding2State extends State<Onboarding2>
                         child: ScaleTransition(
                           scale: _titleScale,
                           child: Text(
-                            "FinWise",
+                            "Fintek",
                             style: TextStyle(
                               fontFamily: "Poppins",
                               fontSize: 52.14,
-                              color: AppColors.success,
+                              color: AppColors.primary,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
@@ -166,12 +168,12 @@ class _Onboarding2State extends State<Onboarding2>
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 36),
                           child: Text(
-                            "Lorem ipsum dolor sit amet, consectetur \nadipiscing elit",
+                            "Your Smart Finance Partner\nManage money with ease",
                             textAlign: TextAlign.center,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 14,
                               fontFamily: 'Poppins',
-                              color: Colors.black54,
+                              color: AppColors.textSecondary,
                             ),
                           ),
                         ),
@@ -186,28 +188,41 @@ class _Onboarding2State extends State<Onboarding2>
                           opacity: _loginOpacity,
                           child: CustomButton(
                             text: 'Log In',
-                            onPressed: () {},
+                            onPressed: () {
+                              // TODO: Navigate to login when ready
+                              // Get.toNamed(AppRoutes.login);
+                              Get.snackbar(
+                                'Coming Soon',
+                                'Login screen under development',
+                                snackPosition: SnackPosition.BOTTOM,
+                                backgroundColor: AppColors.primary,
+                                colorText: AppColors.white,
+                              );
+                            },
                             width: 220,
                             height: 50,
-                            textColor: Colors.black,
+                            textColor: Colors.white,
                           ),
                         ),
                       ),
 
                       const SizedBox(height: 12),
 
-                      // Signup button
+                      // Signup button - goes to onboarding tutorial
                       SlideTransition(
                         position: _signupOffset,
                         child: FadeTransition(
                           opacity: _signupOpacity,
                           child: CustomButton1(
                             text: 'Sign Up',
-                            onPressed: () {},
+                            onPressed: () {
+                              // Navigate to onboarding tutorial
+                              Get.toNamed(AppRoutes.onboarding);
+                            },
                             width: 220,
                             height: 50,
-                            backgroundColor: Colors.grey.shade300,
-                            textColor: Colors.black,
+                            backgroundColor: AppColors.primaryLight,
+                            textColor: AppColors.textPrimary,
                           ),
                         ),
                       ),
@@ -218,7 +233,17 @@ class _Onboarding2State extends State<Onboarding2>
                         opacity: _textButtonOpacity,
                         child: CustomTextButton(
                           text: 'Forgot Password?',
-                          onPressed: () {},
+                          onPressed: () {
+                            // TODO: Navigate to forgot password when ready
+                            // Get.toNamed(AppRoutes.forgotPassword);
+                            Get.snackbar(
+                              'Coming Soon',
+                              'Password recovery under development',
+                              snackPosition: SnackPosition.BOTTOM,
+                              backgroundColor: AppColors.info,
+                              colorText: AppColors.white,
+                            );
+                          },
                         ),
                       ),
                     ],
